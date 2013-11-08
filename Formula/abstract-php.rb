@@ -29,7 +29,6 @@ class AbstractPhp < Formula
     depends_on 'curl' unless MacOS.version >= :lion
     depends_on 'freetds' if build.include? 'with-mssql'
     depends_on 'freetype'
-    depends_on 'gettext'
     depends_on 'gmp' => :optional
     depends_on 'icu4c' if build.include?('with-intl') && build_intl?
     depends_on 'imap-uw' if build.include? 'with-imap'
@@ -180,7 +179,6 @@ INFO
       "--with-freetype-dir=#{Formula.factory('freetype').opt_prefix}",
       "--with-jpeg-dir=#{Formula.factory('jpeg').opt_prefix}",
       "--with-png-dir=#{Formula.factory('libpng').opt_prefix}",
-      "--with-gettext=#{Formula.factory('gettext').opt_prefix}",
       "--with-snmp=/usr",
       "--with-libedit",
       "--with-unixODBC=#{Formula.factory('unixodbc').opt_prefix}",
